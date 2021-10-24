@@ -1,0 +1,136 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #100e1d;
+
+  min-height: 100vh;
+}
+
+.left {
+  flex: 0 0 30%;
+  background-color: #1e213a;
+  text-align: center;
+}
+
+.right {
+  flex: 0 0 70%;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem;
+  padding-bottom: 0;
+
+  margin-bottom: 4rem;
+}
+
+.search-btn {
+  font-size: 1.6rem;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+  background-color: #6e707a;
+  color: #e7e7eb;
+  border: 0;
+
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.gps-icon {
+  fill: #e7e7eb;
+  width: 2.2rem;
+  height: 2.2rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.7rem;
+  box-sizing: content-box;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.weather-icon-container {
+  /* padding: 3rem; */
+  overflow: hidden;
+  position: relative;
+}
+
+.weather-icon-bg {
+  height: 30rem;
+  background-image: url('assets/cloud-background.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 130%;
+  opacity: 0.1;
+}
+
+.weather-state-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+}
+
+.weather-state {
+  color: #a09fb1;
+  font-weight: 600;
+  font-size: 3.6rem;
+
+  margin: 8rem 0;
+}
+
+.weather-temp {
+  color: #e7e7eb;
+  font-size: 7rem;
+  font-size: 14rem;
+  // line-height: 5.6rem;
+
+  margin-top: 4rem;
+}
+
+.temp-scale {
+  font-size: 3.6rem;
+  font-weight: 400;
+  color: #a09fb1;
+}
+
+.time {
+  font-size: 1.8rem;
+  color: #88869d;
+
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 3rem;
+}
+
+.dot {
+  margin: 0 1.6rem;
+}
+
+.location-name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.location-box {
+  color: #88869d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 4rem;
+}
+
+.location-icon {
+  fill: currentColor;
+}
+
+// Right Side
+
+.right {
+  padding: 10rem;
+}

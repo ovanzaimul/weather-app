@@ -1,0 +1,35 @@
+.weather-forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  justify-content: center;
+  gap: 2.6rem;
+
+  .card {
+    background-color: #1e213a;
+    color: #e7e7eb;
+    font-size: 1.6rem;
+    text-align: center;
+    padding: 1.8rem 2rem;
+
+    &__date {
+      font-size: inherit;
+    }
+
+    &__icon {
+      margin: 0 auto;
+      // width: 5rem;
+      // height: 6rem;
+    }
+
+    &__min-max {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__max {
+    }
+    &__min {
+      color: #a09fb1;
+    }
+  }
+}
