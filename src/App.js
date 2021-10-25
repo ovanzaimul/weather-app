@@ -27,7 +27,13 @@ function App() {
       ) : null}
       <div className='right'>
         <WeatherForecast data={userWeather.daily} />
-        <Hightlights />
+        <Hightlights
+          windSpeed={userWeather?.current?.wind_speed}
+          windDeg={userWeather?.current?.wind_deg}
+          humidity={userWeather?.current?.humidity}
+          visibility={userWeather?.current?.visibility}
+          pressure={userWeather?.current?.pressure}
+        />
       </div>
     </div>
   );
