@@ -9,6 +9,9 @@
 html {
   font-size: 62.5%;
   box-sizing: border-box;
+  @media only screen and(max-width: 15.625em ) {
+    font-size: 50%;
+  }
 }
 
 body {

@@ -4,12 +4,18 @@
   justify-content: center;
   gap: 2.6rem;
 
+  align-self: stretch;
+
   .card {
     background-color: #1e213a;
     color: #e7e7eb;
     font-size: 1.6rem;
     text-align: center;
     padding: 1.8rem 2rem;
+
+    @media only screen and(max-width: 15.625em ) {
+      padding: 0;
+    }
 
     &__date {
       font-size: inherit;
@@ -27,8 +33,8 @@
       justify-content: space-between;
     }
 
-    &__max {
-    }
+    // &__max {
+    // }
     &__min {
       color: #a09fb1;
     }

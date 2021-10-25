@@ -6,7 +6,13 @@
   min-height: 100vh;
 
   display: grid;
+  // grid-template-columns: minmax(300px, 1fr) minmax(500px, 1fr);
+
   grid-template-columns: 30% 70%;
+
+  @media only screen and(max-width: 50em ) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .left {
@@ -15,13 +21,23 @@
 }
 
 .right {
-  // flex: 0 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+
+  padding: 2rem 2rem;
+
+  @media only screen and(max-width: 15.625em ) {
+    padding: 2rem 0;
+  }
 }
 
 .btn-container {
   display: flex;
-  justify-content: space-between;
-  padding: 4rem;
+  margin-top: 4.2rem;
+  justify-content: space-evenly;
+  // padding: 4rem;
   padding-bottom: 0;
 
   margin-bottom: 4rem;
@@ -66,6 +82,10 @@
   background-repeat: no-repeat;
   background-size: 130%;
   opacity: 0.1;
+
+  @media only screen and(max-width: 50em ) {
+    background-size: contain;
+  }
 }
 
 .weather-state-icon {
@@ -129,10 +149,4 @@
 
 .location-icon {
   fill: currentColor;
-}
-
-// Right Side
-
-.right {
-  padding: 10rem;
 }

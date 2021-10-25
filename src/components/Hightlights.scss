@@ -1,24 +1,30 @@
 .hightlights {
   margin-top: 7rem;
 
+  display: grid;
+  gap: 4.8rem;
+  // grid-template-rows: 20rem;
+  grid-template-columns: repeat(auto-fill, minmax(min-content, 32.8rem));
+  justify-content: center;
+
+  & > * {
+    background-color: #1e213a;
+
+    @media only screen and(max-width: 15.625em ) {
+      padding: 2rem 0;
+    }
+  }
+
   &__title {
     font-weight: 700;
     font-size: 2.4rem;
     color: #e7e7eb;
     line-height: 2.8rem;
 
-    margin-bottom: 3rem;
-  }
-
-  &__cards {
-    display: grid;
-    gap: 4.8rem;
-    grid-template-rows: 20rem 15rem;
-    grid-template-columns: repeat(2, 32.8rem);
-
-    & > * {
-      background-color: #1e213a;
-    }
+    margin-bottom: -1.8rem;
+    background-color: transparent;
+    grid-column: 1/-1;
+    align-self: center;
   }
 
   .wind {
@@ -26,7 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem 0;
+    padding: 2.2rem 0 2.4rem;
 
     &__text {
       font-size: 1.6rem;
@@ -37,8 +43,8 @@
 
     &__icon {
       fill: #e7e7eb;
-      width: 2.9rem;
-      height: 2.9rem;
+      width: 2.95rem;
+      height: 2.95rem;
       background: rgba(255, 255, 255, 0.2);
       padding: 0.5rem;
       border-radius: 50%;
@@ -49,7 +55,7 @@
       font-weight: 700;
       font-size: 6.4rem;
       line-height: 7.5rem;
-      margin-bottom: 1.7rem;
+      margin-bottom: 2rem;
     }
 
     &__speed-unit {
@@ -78,6 +84,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    padding: 2.2rem 0 2.4rem;
 
     &__text {
       font-size: 1.6rem;
