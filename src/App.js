@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { ReactComponent as GpsIcon } from './assets/gps.svg';
 import { ReactComponent as SearchIcon } from './assets/search.svg';
+import { ReactComponent as CloseIcon } from './assets/close.svg';
 import useUserWeatherState from './components/useUserWeatherState';
 
 import CurrentWeather from './components/CurrentWeather';
@@ -20,6 +21,7 @@ function App() {
     <div className='container'>
       <div className='left'>
         <div className='search'>
+          <CloseIcon className='search__close' />
           <form className='search__form'>
             <div className='search__input-container'>
               <SearchIcon className='search__icon' />
