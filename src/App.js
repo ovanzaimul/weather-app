@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import { ReactComponent as GpsIcon } from './assets/gps.svg';
+import { ReactComponent as SearchIcon } from './assets/search.svg';
 import useUserWeatherState from './components/useUserWeatherState';
 
 import CurrentWeather from './components/CurrentWeather';
@@ -16,15 +18,36 @@ function App() {
 
   return (
     <div className='container'>
-      {userWeather ? (
-        <CurrentWeather
-          icon={`http://openweathermap.org/img/wn/${userWeather?.current?.weather[0].icon}@2x.png`}
-          temp={userWeather?.current?.temp}
-          timezone={userWeather?.timezone}
-          weatherState={userWeather?.current?.weather[0]?.description}
-          date={dateBuilder(new Date())}
-        />
-      ) : null}
+      <div className='left'>
+        <div className='search'>
+          <form className='search__form'>
+            <div className='search__input-container'>
+              <SearchIcon className='search__icon' />
+              <input type='text' className='search__input' placeholder='search location' />
+            </div>
+            <button type='submit' className='search__btn'>
+              Search
+            </button>
+          </form>
+
+          <ul className='search__results'>
+            <li className='search__result-item'>Jakarta</li>
+          </ul>
+        </div>
+        <div className='btn-container'>
+          <button className='search-btn'>Search for places</button>
+          <GpsIcon onClick={() => console.log('get current location')} className='gps-icon' />
+        </div>
+        {userWeather ? (
+          <CurrentWeather
+            icon={`http://openweathermap.org/img/wn/${userWeather?.current?.weather[0].icon}@2x.png`}
+            temp={userWeather?.current?.temp}
+            timezone={userWeather?.timezone}
+            weatherState={userWeather?.current?.weather[0]?.description}
+            date={dateBuilder(new Date())}
+          />
+        ) : null}
+      </div>
       <div className='right'>
         <WeatherForecast data={userWeather.daily} />
         <Hightlights

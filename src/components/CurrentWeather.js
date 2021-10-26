@@ -1,16 +1,11 @@
 import React from 'react';
-import { ReactComponent as GpsIcon } from '../assets/gps.svg';
 import { ReactComponent as LocationIcon } from '../assets/location.svg';
 
 const CurrentWeather = ({ icon, temp, timezone, weatherState, date }) => {
   // const time = new Date();
 
   return (
-    <div className='left'>
-      <div className='btn-container'>
-        <button className='search-btn'>Search for places</button>
-        <GpsIcon onClick={() => console.log('get current location')} className='gps-icon' />
-      </div>
+    <React.Fragment>
       <div className='weather-icon-container'>
         <div className='weather-icon-bg'></div>
         <img className='weather-state-icon' src={icon} alt='' />
@@ -30,7 +25,7 @@ const CurrentWeather = ({ icon, temp, timezone, weatherState, date }) => {
         <LocationIcon className='location-icon' />
         <span className='location-name'>{timezone}</span>
       </div>
-    </div>
+    </React.Fragment>
   );
 };
 
