@@ -16,12 +16,13 @@ import './App.scss';
 
 function App() {
   const [userWeather, setUserWeather] = useUserWeatherState();
+  const [openSearch, setOpenSearch] = useState(false);
 
   return (
     <div className='container'>
       <div className='left'>
-        <div className='search'>
-          <CloseIcon className='search__close' />
+        <div className={`search ${openSearch ? 'open-search' : ''}`}>
+          <CloseIcon className='search__close' onClick={() => setOpenSearch(false)} />
           <form className='search__form'>
             <div className='search__input-container'>
               <SearchIcon className='search__icon' />
@@ -37,7 +38,16 @@ function App() {
           </ul>
         </div>
         <div className='btn-container'>
-          <button className='search-btn'>Search for places</button>
+          <button
+            onClick={() => {
+              console.log('open/close');
+              setOpenSearch(true);
+              console.log(openSearch);
+            }}
+            className='search-btn'
+          >
+            Search for places
+          </button>
           <GpsIcon onClick={() => console.log('get current location')} className='gps-icon' />
         </div>
         {userWeather ? (
