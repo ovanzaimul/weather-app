@@ -8,23 +8,10 @@ function useUserWeatherState() {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
 
-  useEffect(() => {
-    const getUserPostion = () => {
-      navigator.geolocation.getCurrentPosition(
-        ({ coords }) => {
-          // const { latitude, longitude } = coords;
-          setLatitude(coords.latitude);
-          setLongitude(coords.longitude);
-          getUserWeather(latitude, longitude);
-        },
-        () => {
-          console.log('could not get your location');
-        }
-      );
-    };
+  // useEffect(() => {
 
-    getUserPostion();
-  }, [latitude, longitude]);
+  //   getUserPostion();
+  // }, [latitude, longitude]);
 
   const getUserWeather = async (latt, long) => {
     const { data } = await axios.get(

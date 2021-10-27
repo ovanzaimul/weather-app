@@ -272,6 +272,12 @@
       border: 1px solid #616475;
     }
   }
+  &__error {
+    padding: 2rem 1.2rem;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    color: #ff0000;
+  }
 }
 .open-search {
   left: 0 !important;
