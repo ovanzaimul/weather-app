@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import { ReactComponent as GpsIcon } from './assets/gps.svg';
 import { ReactComponent as SearchIcon } from './assets/search.svg';
 import { ReactComponent as CloseIcon } from './assets/close.svg';
-// import useUserWeatherState from './components/useUserWeatherState';
 
 import CurrentWeather from './components/CurrentWeather';
 import WeatherForecast from './components/WeatherForecast';
@@ -17,7 +16,6 @@ import './App.scss';
 const API_KEY = '48cd239b04c296c52fc40bd62f808664';
 
 function App() {
-  // const [userWeather, setUserWeather] = useUserWeatherState();
   const [openSearch, setOpenSearch] = useState(false);
   const [coords, setCoords] = useState({});
   const [userWeather, setUserWeather] = useState({});
@@ -43,10 +41,6 @@ function App() {
   const getUserPostion = () => {
     navigator.geolocation.getCurrentPosition(
       ({ coords }) => {
-        // const { latitude, longitude } = coords;
-        // setLatitude(coords.latitude);
-        // setLongitude(coords.longitude);
-        // getUserWeather(latitude, longitude);
         setCoords({ lat: coords.latitude, lon: coords.longitude });
       },
       () => {
@@ -67,6 +61,7 @@ function App() {
       setCoords(data.coord);
       setQuery('');
       setOpenSearch(false);
+      setError(null);
       console.log('coords aft search:', coords);
     } catch (err) {
       setError('Location not found');
@@ -90,7 +85,7 @@ function App() {
               <input
                 type='text'
                 className='search__input'
-                placeholder='search location'
+                placeholder='search by country(more accurate), city name'
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
               />
